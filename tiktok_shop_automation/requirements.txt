@@ -1,0 +1,29 @@
+# TikTok店铺自动化依赖包
+# 影刀RPA (如果使用影刀，需要从影刀官网下载SDK)
+# 或者使用以下浏览器自动化工具之一:
+
+# Selenium方案
+selenium>=4.15.0
+webdriver-manager>=4.0.1
+
+# 或 Playwright方案 (推荐，性能更好)
+playwright>=1.40.0
+
+# 数据处理
+pandas>=2.1.0
+openpyxl>=3.1.2
+
+# 配置文件
+pyyaml>=6.0.1
+
+# 日志
+loguru>=0.7.2
+
+# 时间处理
+python-dateutil>=2.8.2
+
+# HTTP请求 (备用)
+requests>=2.31.0
+
+# 环境变量
+python-dotenv>=1.0.0

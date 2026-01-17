@@ -1,0 +1,89 @@
+# TikTok店铺自动化配置文件
+
+# TikTok店铺登录信息
+tiktok_shop:
+  # 登录URL
+  login_url: "https://seller.tiktokglobalshop.com/account/login"
+  # 店铺URL (登录后的主页)
+  shop_url: "https://seller.tiktokglobalshop.com"
+  # 用户名/邮箱
+  username: "your_email@example.com"
+  # 密码 (建议使用环境变量)
+  password: "your_password"
+  # 店铺ID (可选)
+  shop_id: ""
+
+# 浏览器配置
+browser:
+  # 浏览器类型: selenium, playwright, yingdao
+  type: "playwright"
+  # 是否无头模式
+  headless: false
+  # 浏览器超时时间(秒)
+  timeout: 30
+  # 页面加载等待时间(秒)
+  page_load_wait: 3
+  # 滚动等待时间(秒)
+  scroll_wait: 2
+
+# 数据抓取配置
+scraping:
+  # 热门商品列表URL路径
+  popular_products_path: "/product/opportunities/popular"
+  # 每页滚动次数 (瀑布流加载)
+  scrolls_per_page: 5
+  # 最大抓取页数 (0表示无限制)
+  max_pages: 0
+  # 每次滚动的像素
+  scroll_pixels: 800
+  # 是否去重
+  deduplicate: true
+  # 商品数据字段
+  fields:
+    - product_id
+    - product_name
+    - price
+    - sales
+    - image_url
+    - product_url
+    - category
+    - rating
+
+# 数据存储配置
+storage:
+  # 存储格式: json, csv, excel
+  format: "excel"
+  # 输出目录
+  output_dir: "./data"
+  # 文件名前缀
+  file_prefix: "tiktok_popular_products"
+  # 是否追加到现有文件
+  append: false
+  # 时间戳格式
+  timestamp_format: "%Y%m%d_%H%M%S"
+
+# 日志配置
+logging:
+  # 日志级别: DEBUG, INFO, WARNING, ERROR
+  level: "INFO"
+  # 日志目录
+  log_dir: "./logs"
+  # 日志文件名
+  log_file: "tiktok_automation.log"
+  # 日志保留天数
+  retention_days: 7
+
+# 高级配置
+advanced:
+  # 是否保存截图
+  save_screenshots: true
+  # 截图目录
+  screenshot_dir: "./logs/screenshots"
+  # 失败重试次数
+  retry_times: 3
+  # 重试间隔(秒)
+  retry_interval: 5
+  # 是否使用代理
+  use_proxy: false
+  # 代理地址
+  proxy_url: ""
